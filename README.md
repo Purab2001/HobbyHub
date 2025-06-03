@@ -3,8 +3,8 @@
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-brightgreen)](https://hobbyhub-19bff.web.app/)
 [![Server](https://img.shields.io/badge/Server-Online-blue)](https://hobby-hub-server.vercel.app)
 [![React](https://img.shields.io/badge/React-19.1-blue)](https://react.dev/)
-[![Vite](https://img.shields.io/badge/Vite-6-yellow)](https://vitejs.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1-blue)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-6.3.5-yellow)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1.8-blue)](https://tailwindcss.com/)
 
 ## 🌟 Overview
 
