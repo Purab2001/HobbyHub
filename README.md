@@ -42,10 +42,10 @@
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **React** (v18.2.0) - UI Library
-- **Vite** (v4.4.5) - Build Tool
-- **Tailwind CSS** (v3.3.3) - Styling
-- **React Router** (v6.4) - Navigation
+- **React** (v19.1) - UI Library
+- **Vite** (v6.3.5) - Build Tool
+- **Tailwind CSS** (v4.1.8) - Styling
+- **React Router** (v7.6.1) - Navigation
 - **Lottie** - Animations
 - **React Icons** - Icon Library
 - **Framer Motion** - Animations
