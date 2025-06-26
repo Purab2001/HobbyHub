@@ -12,6 +12,10 @@ import MyGroups from '../pages/MyGroups';
 import PrivateRoute from '../context/PrivateRoute';
 import AboutUs from '../pages/AboutUs';
 import Terms from '../pages/Terms';
+import DashboardLayout from '../layouts/DashboardLayout';
+// Dashboard pages
+import DashboardHome from '../pages/Dashboard/DashboardHome';
+import UpdateProfile from '../pages/Dashboard/UpdateProfile';
 
 const router = createBrowserRouter([
     {
@@ -24,14 +28,6 @@ const router = createBrowserRouter([
                 hydrateFallbackElement: <LoadingSpinner />,
                 loader: () => fetch('https://hobby-hub-server.vercel.app/groups'),
                 Component: Home,
-            },
-            {
-                path: '/createGroup',
-                element: (
-                    <PrivateRoute>
-                        <CreateGroups />
-                    </PrivateRoute>
-                ),
             },
             {
                 path: '/groups',
@@ -50,16 +46,6 @@ const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`https://hobby-hub-server.vercel.app/groups/${params.id}`),
             },
             {
-                path: '/myGroups',
-                element: (
-                    <PrivateRoute>
-                        <MyGroups />
-                    </PrivateRoute>
-                ),
-                hydrateFallbackElement: <LoadingSpinner />,
-                loader: () => fetch('https://hobby-hub-server.vercel.app/groups'),
-            },
-            {
                 path: '/login',
                 Component: Login,
             },
@@ -68,11 +54,11 @@ const router = createBrowserRouter([
                 Component: Register,
             },
             {
-                path: 'about',
+                path: '/about',
                 Component: AboutUs
             },
             {
-                path: 'terms',
+                path: '/terms',
                 Component: Terms
             },
             {
@@ -81,6 +67,29 @@ const router = createBrowserRouter([
             }
         ],
     },
+    {
+        path: '/dashboard',
+        element: <PrivateRoute><DashboardLayout /></PrivateRoute>,
+        errorElement: <ErrorPage />,
+        children: [
+            {
+                index: true,
+                Component: DashboardHome,
+            },
+            {
+                path: 'create-groups',
+                Component: CreateGroups,
+            },
+            {
+                path: 'my-groups',
+                Component: MyGroups,
+            },
+            {
+                path: 'update-profile',
+                Component: UpdateProfile,
+            },
+        ]
+    }
 ]);
 
 export default router;

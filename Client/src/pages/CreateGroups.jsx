@@ -73,7 +73,7 @@ const CreateGroups = () => {
                     showCancelButton: true,
                     cancelButtonText: 'Create Another',
                     onConfirm: () => {
-                        navigate('/myGroups');
+                        navigate('/dashboard/my-groups');
                     },
                     onCancel: () => {
                         form.reset();
@@ -102,14 +102,13 @@ const CreateGroups = () => {
 
     return (
         <motion.div
-            className="bg-base-200 py-16 px-6"
+            className="bg-base-100 px-6 md:px-12 lg:px-24 py-16"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8 }}
         >
             <motion.div
-                className="max-w-lg mx-auto bg-base-100 rounded-lg shadow-md p-8"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}

@@ -127,11 +127,11 @@ const Navbar = () => {
                                 <NavLink to="/groups" className={mobileLinkStyles} onClick={toggleMenu}>
                                     All Groups
                                 </NavLink>
-                                <NavLink to="/createGroup" className={mobileLinkStyles} onClick={toggleMenu}>
-                                    Create Group
+                                <NavLink to="/about" className={mobileLinkStyles} onClick={toggleMenu}>
+                                    About Us
                                 </NavLink>
-                                <NavLink to="/myGroups" className={mobileLinkStyles} onClick={toggleMenu}>
-                                    My Groups
+                                <NavLink to="/terms" className={mobileLinkStyles} onClick={toggleMenu}>
+                                    Terms of Service
                                 </NavLink>
                             </div>
                         )}
@@ -158,18 +158,18 @@ const Navbar = () => {
                         </li>
                         <li>
                             <NavLink
-                                to="/createGroup"
+                                to="/about"
                                 className={navLinkStyles}
                             >
-                                Create Group
+                                About Us
                             </NavLink>
                         </li>
                         <li>
                             <NavLink
-                                to="/myGroups"
+                                to="/terms"
                                 className={navLinkStyles}
                             >
-                                My Groups
+                                Terms of Service
                             </NavLink>
                         </li>
                     </ul>

@@ -166,7 +166,7 @@ const MyGroups = () => {
                     <p className="opacity-80">Manage all the groups you have created</p>
                 </div>
                 <div className="mt-4 sm:mt-0">
-                    <Link to="/createGroup">
+                    <Link to="/dashboard/create-groups">
                         <Button className="flex items-center gap-2">
                             <FaPlus /> Create New Group
                         </Button>
@@ -177,16 +177,15 @@ const MyGroups = () => {
             {myGroups.length === 0 ? (
                 <div className="text-center py-10 bg-base-100 rounded-lg shadow-sm">
                     <p className="mb-4">You haven't created any groups yet.</p>
-                    <Link to="/createGroup">
+                    <Link to="/dashboard/create-groups">
                         <Button variant="primary">Create Your First Group</Button>
                     </Link>
                 </div>
             ) : (
                 <motion.div
-                    className="overflow-x-auto"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
+                    className="overflow-x-visible overflow-y-visible"
+                    initial={{ opacity: 0, y: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
                     <table className="w-full table-auto border-collapse bg-base-100 rounded-lg shadow-sm">
