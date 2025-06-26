@@ -92,8 +92,8 @@ const Navbar = () => {
     };
 
     return (
-        <div className="relative">
-            <div className="navbar bg-base-100 px-6 md:px-12 lg:px-24 container mx-auto">
+        <div className="relative sticky top-0 z-50">
+            <div className="navbar bg-base-100 px-6 md:px-12 lg:px-24 container mx-auto shadow-sm">
                 <div className="navbar-start">
                     <div className="relative">
                         {/* Small screens: Button for mobile dropdown */}

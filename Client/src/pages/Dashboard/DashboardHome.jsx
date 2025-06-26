@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import { FaPlus, FaLayerGroup, FaUsers, FaClock } from 'react-icons/fa';
+import LoadingSpinner from '../../ui/LoadingSpinner';
 
 const DashboardHome = () => {
     const { user } = useContext(AuthContext);
@@ -35,7 +36,7 @@ const DashboardHome = () => {
     }, [user]);
 
     if (loading) {
-        return <div className="flex justify-center items-center min-h-[200px]">Loading...</div>;
+        return <LoadingSpinner />;
     }
 
     const userGroups = groups.filter(g => g.creatorEmail === user?.email);
