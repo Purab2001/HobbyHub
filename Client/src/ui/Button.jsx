@@ -1,7 +1,17 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
 
-const Button = ({ children, onClick, type = 'button', variant = 'primary', size = 'md', className = '', disabled = false, ...props }) => {
+const Button = ({
+    children,
+    onClick,
+    type = 'button',
+    variant = 'primary',
+    size = 'md',
+    className = '',
+    disabled = false,
+    as: Component = 'button',
+    ...props
+}) => {
     const { theme } = useContext(ThemeContext);
     const baseStyle = 'btn rounded-md font-medium shadow-none';
     let variantStyle = '';
@@ -9,8 +19,8 @@ const Button = ({ children, onClick, type = 'button', variant = 'primary', size 
 
     switch (variant) {
         case 'primary':
-            variantStyle = theme === 'dark' 
-                ? 'text-slate-800 bg-white hover:bg-gray-200 border-none' 
+            variantStyle = theme === 'dark'
+                ? 'text-slate-800 bg-white hover:bg-gray-200 border-none'
                 : 'btn-primary text-white bg-slate-800 hover:bg-slate-700 border-none';
             break;
         case 'outline':
@@ -45,15 +55,15 @@ const Button = ({ children, onClick, type = 'button', variant = 'primary', size 
     }
 
     return (
-        <button
-            type={type}
+        <Component
+            type={Component === 'button' ? type : undefined}
             onClick={onClick}
             className={`${baseStyle} ${variantStyle} ${sizeStyle} ${className}`}
             disabled={disabled}
             {...props}
         >
             {children}
-        </button>
+        </Component>
     );
 };
 

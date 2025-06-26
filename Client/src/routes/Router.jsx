@@ -10,6 +10,8 @@ import Register from '../pages/Register';
 import GroupDetails from '../pages/GroupDetails';
 import MyGroups from '../pages/MyGroups';
 import PrivateRoute from '../context/PrivateRoute';
+import AboutUs from '../pages/AboutUs';
+import Terms from '../pages/Terms';
 
 const router = createBrowserRouter([
     {
@@ -64,6 +66,14 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 Component: Register,
+            },
+            {
+                path: 'about',
+                Component: AboutUs
+            },
+            {
+                path: 'terms',
+                Component: Terms
             },
             {
                 path: '*',

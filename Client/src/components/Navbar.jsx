@@ -193,52 +193,63 @@ const Navbar = () => {
                     </button>
 
                     {user ? (
-                        <div
-                            className="relative"
-                            ref={profileRef}
-                            onMouseEnter={handleProfileMouseEnter}
-                            onMouseLeave={handleProfileMouseLeave}
-                        >
-                            <button
-                                className="flex items-center focus:outline-none cursor-pointer"
-                                aria-label="User menu"
-                            >
-                                <div className="avatar">
-                                    <div className="w-8 rounded-full ring ring-base-content ring-offset-base-100 ring-offset-2">
-                                        {user.photoURL ? (
-                                            <img
-                                                src={user.photoURL}
-                                                alt={user.displayName || "User"}
-                                                className="object-cover"
-                                            />
-                                        ) : (
-                                            <div className="bg-base-300 text-base-content flex items-center justify-center h-full text-lg font-medium">
-                                                {user.displayName ? user.displayName.charAt(0).toUpperCase() : 'U'}
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-                            </button>
-
-                            {isProfileOpen && (
-                                <div
-                                    className="absolute right-0 mt-2 w-48 bg-base-100 rounded-md shadow-lg overflow-hidden z-20"
-                                    onMouseEnter={handleProfileMouseEnter}
-                                    onMouseLeave={handleProfileMouseLeave}
+                        <>
+                            <Link to="/dashboard">
+                                <Button
+                                    variant="outline"
+                                    size="sm"
+                                    className="mr-5 text-sm md:text-base"
                                 >
-                                    <div className="px-4 py-3 text-sm text-base-content border-b border-base-300">
-                                        <div className="font-medium">{user.displayName || 'User'}</div>
-                                        <div className="text-xs truncate">{user.email}</div>
+                                    Dashboard
+                                </Button>
+                            </Link>
+                            <div
+                                className="relative"
+                                ref={profileRef}
+                                onMouseEnter={handleProfileMouseEnter}
+                                onMouseLeave={handleProfileMouseLeave}
+                            >
+                                <button
+                                    className="flex items-center focus:outline-none cursor-pointer"
+                                    aria-label="User menu"
+                                >
+                                    <div className="avatar">
+                                        <div className="w-8 rounded-full ring ring-base-content ring-offset-base-100 ring-offset-2">
+                                            {user.photoURL ? (
+                                                <img
+                                                    src={user.photoURL}
+                                                    alt={user.displayName || "User"}
+                                                    className="object-cover"
+                                                />
+                                            ) : (
+                                                <div className="bg-base-300 text-base-content flex items-center justify-center h-full text-lg font-medium">
+                                                    {user.displayName ? user.displayName.charAt(0).toUpperCase() : 'U'}
+                                                </div>
+                                            )}
+                                        </div>
                                     </div>
-                                    <button
-                                        onClick={handleLogout}
-                                        className="flex items-center w-full px-4 py-2 text-sm text-left hover:bg-base-200 cursor-pointer"
+                                </button>
+
+                                {isProfileOpen && (
+                                    <div
+                                        className="absolute right-0 mt-2 w-48 bg-base-100 rounded-md shadow-lg overflow-hidden z-20"
+                                        onMouseEnter={handleProfileMouseEnter}
+                                        onMouseLeave={handleProfileMouseLeave}
                                     >
-                                        <FaSignOutAlt className="mr-2" /> Sign out
-                                    </button>
-                                </div>
-                            )}
-                        </div>
+                                        <div className="px-4 py-3 text-sm text-base-content border-b border-base-300">
+                                            <div className="font-medium">{user.displayName || 'User'}</div>
+                                            <div className="text-xs truncate">{user.email}</div>
+                                        </div>
+                                        <button
+                                            onClick={handleLogout}
+                                            className="flex items-center w-full px-4 py-2 text-sm text-left hover:bg-base-200 cursor-pointer"
+                                        >
+                                            <FaSignOutAlt className="mr-2" /> Sign out
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
+                        </>
                     ) : (
                         <>
                             <NavLink to="/login">
