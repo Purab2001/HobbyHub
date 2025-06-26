@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, NavLink, Outlet } from 'react-router'
-import { FaHome, FaPlus, FaLayerGroup, FaUserEdit } from 'react-icons/fa'
+import { FaHome, FaPlus, FaLayerGroup, FaUserEdit, FaThList } from 'react-icons/fa'
 import logo from '/logo.svg'
 
 const DashboardLayout = () => {
@@ -54,6 +54,19 @@ const DashboardLayout = () => {
             >
               <FaHome className="inline mr-2" />
               Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/dashboard/all-groups"
+              className={({ isActive }) =>
+                isActive
+                  ? 'active bg-black text-white font-bold'
+                  : undefined
+              }
+            >
+              <FaThList className="inline mr-2" />
+              All Groups
             </NavLink>
           </li>
           <li>

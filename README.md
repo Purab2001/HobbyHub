@@ -39,6 +39,15 @@
   - Smooth animations and transitions
   - Loading states and error handling
 
+### Dashboard
+- All users have access to a personalized dashboard.
+- Users can:
+  - View an overview of their activity.
+  - Manage groups they have created or joined.
+  - Update their profile information (display name, photo, bio).
+  - See recent activities related to their groups.
+- The dashboard centralizes group and profile management for a streamlined experience.
+
 ## 🛠️ Tech Stack
 
 ### Frontend
@@ -51,6 +60,8 @@
 - **Framer Motion** - Animations
 
 ### Backend & Infrastructure
+- **Node.js/Express** - REST API server
+- **MongoDB (MongoDB Atlas)** - Database
 - **Firebase**:
   - Authentication
   - Hosting
@@ -95,8 +106,10 @@
 
 ## 📂 Project Structure
 
+### Client
+
 ```
-hobbyhub-client/
+Client/
 ├── public/               # Static assets
 ├── src/
 │   ├── assets/           # Images & animations
@@ -112,6 +125,62 @@ hobbyhub-client/
 ├── .eslintrc.js          # ESLint config
 ├── tailwind.config.js    # Tailwind config
 └── vite.config.js        # Vite config
+```
+
+### Server
+
+```
+Server/
+├── index.js             # Express server & API routes
+├── package.json         # Server dependencies
+├── .gitignore
+└── vercel.json          # Deployment config
+```
+
+## 🗄️ Backend API
+
+The server (Node.js/Express, MongoDB) exposes the following endpoints:
+
+- `GET /groups` — List all groups
+- `GET /groups/:id` — Get a group by ID
+- `POST /groups` — Create a new group
+- `PUT /groups/:id` — Update a group
+- `DELETE /groups/:id` — Delete a group
+
+## 🛠️ Server Setup
+
+1. Navigate to the `Server` directory:
+   ```sh
+   cd Server
+   ```
+
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+
+3. Create a `.env` file with your MongoDB credentials:
+   ```
+   DB_USER=yourMongoUser
+   DB_PASS=yourMongoPassword
+   PORT=3000
+   ```
+
+4. Start the server:
+   ```sh
+   node index.js
+   ```
+
+The server will run on `http://localhost:3000` by default.
+
+## 🗺️ Project Architecture Diagram
+
+```mermaid
+graph TD
+  A[Client (React)] -->|API Calls| B[Server (Express)]
+  B -->|MongoDB Atlas| C[(Database)]
+  A -->|Auth| D[Firebase]
+  B -->|Deployment| E[Vercel]
 ```
 
 ## 🤝 Contributing

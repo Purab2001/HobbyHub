@@ -1,6 +1,4 @@
 import React, { useState, useContext } from 'react';
-// eslint-disable-next-line no-unused-vars
-import { motion } from 'framer-motion';
 import { HiUserGroup } from 'react-icons/hi';
 import { FaPlus } from "react-icons/fa";
 import Button from '../ui/Button';
@@ -101,32 +99,15 @@ const CreateGroups = () => {
     };
 
     return (
-        <motion.div
-            className="bg-base-100 px-6 md:px-12 lg:px-24 py-16"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
-        >
-            <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6 }}
-            >
-                <motion.div
-                    className="text-center mb-8"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.5 }}
-                >
+        <div className="bg-base-100 px-6 md:px-12 lg:px-24 py-16">
+            <div>
+                <div className="text-center mb-8">
                     <div className="mx-auto bg-base-200 w-14 h-14 flex items-center justify-center rounded-full mb-4">
                         <HiUserGroup className="h-8 w-8" />
                     </div>
                     <h2 className="text-3xl font-bold mb-2">Create a New Group</h2>
                     <p className="text-base opacity-80">Start a community around your favorite hobby</p>
-                </motion.div>
+                </div>
 
                 <form onSubmit={handleAddGroup}>
                     <div className="mb-4">
@@ -271,8 +252,8 @@ const CreateGroups = () => {
                         <span className="mr-2">Create</span>
                     </Button>
                 </form>
-            </motion.div>
-        </motion.div>
+            </div>
+        </div>
     );
 };
 

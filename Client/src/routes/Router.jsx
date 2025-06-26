@@ -16,6 +16,7 @@ import DashboardLayout from '../layouts/DashboardLayout';
 // Dashboard pages
 import DashboardHome from '../pages/Dashboard/DashboardHome';
 import UpdateProfile from '../pages/Dashboard/UpdateProfile';
+import AllGroups2 from '../pages/Dashboard/AllGroups2';
 
 const router = createBrowserRouter([
     {
@@ -75,6 +76,10 @@ const router = createBrowserRouter([
             {
                 index: true,
                 Component: DashboardHome,
+            },
+            {
+                path: 'all-groups',
+                Component: AllGroups2,
             },
             {
                 path: 'create-groups',

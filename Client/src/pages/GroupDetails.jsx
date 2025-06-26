@@ -1,8 +1,6 @@
 import React, { useContext, useState } from 'react';
-// eslint-disable-next-line no-unused-vars
-import { motion } from 'framer-motion';
 import { useLoaderData } from 'react-router';
-import { FaMapMarkerAlt, FaCalendarAlt, FaUsers, FaInfoCircle, FaUserCircle, FaUserPlus, FaTimesCircle } from 'react-icons/fa';
+import { FaCalendarAlt, FaUsers, FaInfoCircle, FaUserCircle, FaUserPlus, FaTimesCircle } from 'react-icons/fa';
 import { BiSolidCategory } from 'react-icons/bi';
 import { MdLocationOn } from 'react-icons/md';
 import { AuthContext } from '../context/AuthContext';
@@ -41,31 +39,13 @@ const GroupDetails = () => {
     };
 
     return (
-        <motion.section
-            className='bg-base-200'
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
-        >
+        <section className='bg-base-200'>
             <div className="container mx-auto px-6 py-16">
                 <div className="max-w-4xl mx-auto">
-                    <motion.div
-                        className="bg-base-100 rounded-lg overflow-hidden shadow-md"
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ duration: 0.6 }}
-                    >
+                    <div className="bg-base-100 rounded-lg overflow-hidden shadow-md">
                         {/* Group image section */}
                         <div className="flex flex-col md:flex-row">
-                            <motion.div
-                                className="md:w-[350px] h-[300px] md:h-auto bg-slate-700 flex items-center justify-center"
-                                initial={{ opacity: 0, x: -40 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true, amount: 0.3 }}
-                                transition={{ duration: 0.6 }}
-                            >
+                            <div className="md:w-[350px] h-[300px] md:h-auto bg-slate-700 flex items-center justify-center">
                                 {imageUrl ? (
                                     <img
                                         src={imageUrl}
@@ -77,16 +57,10 @@ const GroupDetails = () => {
                                         Group Image
                                     </div>
                                 )}
-                            </motion.div>
+                            </div>
 
                             {/* Group details header */}
-                            <motion.div
-                                className="p-6 md:flex-1"
-                                initial={{ opacity: 0, x: 40 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true, amount: 0.3 }}
-                                transition={{ duration: 0.6, delay: 0.1 }}
-                            >
+                            <div className="p-6 md:flex-1">
                                 <h1 className="text-2xl md:text-3xl font-bold mb-2">{groupName}</h1>
                                 <div className="flex items-center mb-2">
                                     <BiSolidCategory className="mr-2" />
@@ -101,17 +75,11 @@ const GroupDetails = () => {
                                 <p className="text-base-content/80 mb-6">
                                     {description}
                                 </p>
-                            </motion.div>
+                            </div>
                         </div>
 
                         <div className="border-t border-base-300">
-                            <motion.div
-                                className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6"
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, amount: 0.3 }}
-                                transition={{ duration: 0.5, delay: 0.2 }}
-                            >
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
                                 <div className="space-y-4">
                                     {/* Start date */}
                                     <div className="flex items-center gap-4">
@@ -144,16 +112,11 @@ const GroupDetails = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </motion.div>
+                            </div>
 
                             {/* Description section */}
                             <div className="border-t border-base-300 p-6">
-                                <motion.div
-                                    initial={{ opacity: 0, y: 30 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true, amount: 0.3 }}
-                                    transition={{ duration: 0.5, delay: 0.3 }}
-                                >
+                                <div>
                                     <div className="flex items-center mb-3">
                                         <FaInfoCircle className="mr-2" />
                                         <h3 className="text-lg font-medium">Description</h3>
@@ -161,18 +124,12 @@ const GroupDetails = () => {
                                     <p className="text-base-content/80 whitespace-pre-line">
                                         {description}
                                     </p>
-                                </motion.div>
+                                </div>
                             </div>
                         </div>
 
                         {/* Join/Cancel button */}
-                        <motion.div
-                            className="border-t border-base-300 p-6 flex justify-center"
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.3 }}
-                            transition={{ duration: 0.5, delay: 0.4 }}
-                        >
+                        <div className="border-t border-base-300 p-6 flex justify-center">
                             {isCreator ? (
                                 <div className="px-10 py-3 rounded bg-base-200 text-base-content font-semibold flex items-center gap-2">
                                     <FaUserCircle size={18} />
@@ -204,11 +161,11 @@ const GroupDetails = () => {
                                     )}
                                 </Button>
                             )}
-                        </motion.div>
-                    </motion.div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </motion.section>
+        </section>
     );
 };
 
