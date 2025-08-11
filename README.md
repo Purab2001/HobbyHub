@@ -24,7 +24,7 @@
   </tr>
   <tr>
     <td><img src="Client/public/screenshot-homepage.png" alt="Homepage" height="300"></td>
-    <td><img src="Client/public/screenshot-blog-groups.png" alt="Groups" height="300"></td>
+    <td><img src="Client/public/screenshot-groups.png" alt="Groups" height="300"></td>
   </tr>
 </table>
 
