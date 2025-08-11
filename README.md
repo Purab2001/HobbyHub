@@ -173,16 +173,6 @@ The server (Node.js/Express, MongoDB) exposes the following endpoints:
 
 The server will run on `http://localhost:3000` by default.
 
-## 🗺️ Project Architecture Diagram
-
-```mermaid
-graph TD
-  A[Client (React)] -->|API Calls| B[Server (Express)]
-  B -->|MongoDB Atlas| C[(Database)]
-  A -->|Auth| D[Firebase]
-  B -->|Deployment| E[Vercel]
-```
-
 ## 🤝 Contributing
 
 Contributions are welcome! Please follow these steps:
