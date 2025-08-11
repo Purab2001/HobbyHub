@@ -15,6 +15,19 @@
 - Interact with like-minded enthusiasts
 - Share experiences and knowledge
 
+## 📸 Screenshots
+
+<table>
+  <tr>
+    <td align="center"><b>Homepage</b></td>
+    <td align="center"><b>Blog Details</b></td>
+  </tr>
+  <tr>
+    <td><img src="Client/public/screenshot-homepage.png" alt="Homepage" height="300"></td>
+    <td><img src="Client/public/screenshot-blog-groups.png" alt="Groups" height="300"></td>
+  </tr>
+</table>
+
 ### Key Links
 - **Live Client:** [https://hobbyhub-19bff.web.app/](https://hobbyhub-19bff.web.app/)
 - **Live Server:** [https://hobby-hub-server.vercel.app](https://hobby-hub-server.vercel.app)
